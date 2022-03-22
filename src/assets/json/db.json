@@ -1,0 +1,25 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "fname": "Abhishek",
+      "age": 26,
+      "phone": 458921,
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "fname": "Abhishek",
+      "age": 26,
+      "phone": 458921,
+      "gender": "Male"
+    },
+    {
+      "fname": "Abhishek Kishorbhai Patel",
+      "age": 22,
+      "phone": "9925607945",
+      "gender": "Male",
+      "id": 3
+    }
+  ]
+}
