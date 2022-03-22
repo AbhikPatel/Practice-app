@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { EmployeeModel } from '../../employee.model';
@@ -13,17 +13,29 @@ import { EmployeeFormPresenterService } from '../employee-form-presenter/employe
 })
 export class EmployeeFormPresentationComponent implements OnInit {
 
+  @Input() public set update(updatedata:EmployeeModel | null){
+    if(updatedata){
+      this.employeegroup.patchValue(updatedata)
+    }
+  }
   @Output() public employeedata:EventEmitter<EmployeeModel>; 
+  @Output() public edit:EventEmitter<EmployeeModel>; 
   public employeegroup:FormGroup;
+  public editmode:boolean;
 
   constructor(private service:EmployeeFormPresenterService) {
     this.employeedata = new EventEmitter<EmployeeModel>(); 
+    this.edit = new EventEmitter<EmployeeModel>(); 
     this.employeegroup = this.service.group();
   }
 
   ngOnInit(): void {
     this.service.dataobserve$.subscribe((m) => {
-      this.employeedata.emit(m);
+      if(this.editmode){
+        this.edit.emit(m);
+      }else{
+        this.employeedata.emit(m);
+      }
     })
   }
 

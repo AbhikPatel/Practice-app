@@ -23,4 +23,14 @@ export class EmployeeService {
   public deletedata(id:number):Observable<EmployeeModel>{
     return this.http.delete<EmployeeModel>(`${this.api}employees/${id}`);
   }
+
+  public getbyid(id:number):Observable<EmployeeModel>{
+    return this.http.get<EmployeeModel>(`${this.api}employees/${id}`);
+  }
+
+  public updatedata(data:EmployeeModel ,id:number):Observable<EmployeeModel>{
+    return this.http.put<EmployeeModel>(`${this.api}employees/${id}`,data);
+  }
+
+  
 }

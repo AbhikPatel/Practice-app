@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeModel } from '../../employee.model';
 import { EmployeeListPresenterService } from '../employee-list-presenter/employee-list-presenter.service';
 
@@ -27,7 +28,7 @@ export class EmployeeListPresentationComponent implements OnInit {
   private _listdata:EmployeeModel[];
   public userlength:number;
 
-  constructor(private service:EmployeeListPresenterService) { 
+  constructor(private service:EmployeeListPresenterService, private route:Router) { 
     this.delelteid = new EventEmitter<number>();
   }
 
@@ -37,6 +38,10 @@ export class EmployeeListPresentationComponent implements OnInit {
 
   public ondelete(id:number){
     this.service.getdeleteid(id)
+  }
+
+  public onedit(id:number){
+    this.route.navigateByUrl(`employee/edit/${id}`)
   }
 
 }
