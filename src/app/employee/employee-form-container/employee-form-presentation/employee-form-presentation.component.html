@@ -1,0 +1,30 @@
+<div class="container py-5">
+    <form class="p-5 rounded border border-primary border-3" [formGroup]="employeegroup">
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="fname" class="form-label"> Name</label>
+                <input type="text" class="form-control" placeholder="Enter your Name" id="fname" aria-describedby="fullname" formControlName = 'fname'>
+            </div>
+            <div class="col-6">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" placeholder="Enter your Age" id="age" aria-describedby="Age" formControlName = 'age'>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-6">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="eg. 95478-56245" id="phone" aria-describedby="Phone Number" formControlName = 'phone'>
+            </div>
+            <div class="col-6">
+                <label for="gender"> Gender </label>
+                <div class="d-flex justify-content-between py-2 align-items-center w-50">
+                    <input type="radio" class="form-check-input" name="gender" id="male" value="Male" formControlName = 'gender'>
+                    <label for="male" class="form-check-label"> Male </label>
+                    <input type="radio" class="form-check-input" name="gender" id="female" value="Female" formControlName = 'gender'>
+                    <label for="female" class="form-check-label"> Female </label>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" routerLink="/employee/list" [disabled]="!employeegroup.valid" (click)="onsubmit()">Submit</button>
+    </form>
+</div>

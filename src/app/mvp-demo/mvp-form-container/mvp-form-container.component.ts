@@ -14,7 +14,7 @@ export class MvpFormContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public post(data:UserModel){
+  public add(data:UserModel){
     this.service.postdata(data).subscribe(m => {
       alert("Data Added")
     })

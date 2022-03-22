@@ -12,7 +12,6 @@ import { MvpListPresenterService } from '../mvp-list-presenter/mvp-list-presente
 export class MvpListPresentationComponent implements OnInit {
 
   @Input() public set listData(list:UserModel[] | null){
-    console.log(list)
     if(list){
       this._listData = list;
     }
