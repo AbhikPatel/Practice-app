@@ -1,7 +1,6 @@
-<div class="container py-5">
-
-    <button class="btn btn-primary my-5" routerLink="/mvp/form"> Add </button>
-    <table class="table table-striped border border-3">
+<div class="container p-5">
+    <button class="btn btn-primary my-5" routerLink="/crud/form"> Add </button>
+    <table class="table table-striped my-5">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -13,14 +12,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let m of listData, let i = index">
+          <tr *ngFor="let m of datalist, let i = index">
             <td scope="row">{{ i + 1 }}</td>
             <td> {{ m.fname }} </td>
             <td> {{ m.age }} </td>
             <td> {{ m.phone }} </td>
             <td> {{ m.gender }} </td>
-            <td> <button class="btn btn-warning" routerLink="/mvp/edit/{{m.id}}"> Edit </button> </td>
-            <td> <button class="btn btn-danger" (click)="ondelete(m.id)"> Delete </button> </td>
+            <td> <button class="btn btn-warning" (click)="onedit(i+1)" routerLink="/crud/edit/{{i+1}}"> Edit </button> </td>
+            <td> <button (click)="ondelete(i+1)" class="btn btn-danger"> Delete </button> </td>
           </tr>
         </tbody>
       </table>

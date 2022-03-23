@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from '../../user.model';
 import { MvpFormPresenterService } from '../mvp-form-presenter/mvp-form-presenter.service';
 
@@ -12,10 +13,21 @@ import { MvpFormPresenterService } from '../mvp-form-presenter/mvp-form-presente
 })
 export class MvpFormPresentationComponent implements OnInit {
 
+  @Input() public set formdata(form:UserModel){
+    // this.editdata = form;
+    this.usergroup.patchValue(form);
+  }
+
+  public get formdata():UserModel{
+    return this.editdata;
+  }
   @Output() adddataemit:EventEmitter<UserModel>; 
   public usergroup:FormGroup;
-  constructor(private service:MvpFormPresenterService) {
-    this.adddataemit = new EventEmitter<UserModel>(); 
+  public editdata:UserModel;
+  public getid:number
+  constructor(private service:MvpFormPresenterService, private route:Router) {
+    this.adddataemit = new EventEmitter<UserModel>();
+    
   }
   
   ngOnInit(): void {
@@ -23,10 +35,15 @@ export class MvpFormPresentationComponent implements OnInit {
     this.service.addobser$.subscribe(m => {
       this.adddataemit.emit(m)
     })
+
+    
+    
+    
   }
 
   public onsubmit(){
     this.service.adddata(this.usergroup.value)
+    this.route.navigateByUrl(`/mvp/list`)
   }
 
 }

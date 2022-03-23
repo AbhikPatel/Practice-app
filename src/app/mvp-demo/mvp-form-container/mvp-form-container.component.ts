@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { MvpService } from '../mvp.service';
 import { UserModel } from '../user.model';
 
@@ -9,9 +11,16 @@ import { UserModel } from '../user.model';
 })
 export class MvpFormContainerComponent implements OnInit {
 
-  constructor(private service:MvpService) { }
+  public data:Observable<UserModel>;
+  public getid:number
+  constructor(private service:MvpService, private active:ActivatedRoute) { 
+    this.data = new Observable<UserModel>()
+    this.getid = this.active.snapshot.params['id']
+    console.log(this.getid);
+  }
 
   ngOnInit(): void {
+    // this.get();
   }
 
   public add(data:UserModel){
@@ -19,5 +28,7 @@ export class MvpFormContainerComponent implements OnInit {
       alert("Data Added")
     })
   }
+
+// nngnhghgjhjjhfvbfjkjgfbgdchm tg hgfjhdfgbfdvsvc
 
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from '../../user.model';
 import { MvpListPresenterService } from '../mvp-list-presenter/mvp-list-presenter.service';
 
@@ -25,7 +26,7 @@ export class MvpListPresentationComponent implements OnInit {
   
   private _listData: UserModel[];
 
-  constructor(private service:MvpListPresenterService) { 
+  constructor(private service:MvpListPresenterService, private route:Router) { 
     this.deleteid = new EventEmitter<number>()
   }
 
@@ -38,4 +39,8 @@ export class MvpListPresentationComponent implements OnInit {
   public ondelete(id:number){
     this.service.deleteser(id);
   }
+
+  // public onedit(id:number){
+  //   this.route.
+  // }
 }

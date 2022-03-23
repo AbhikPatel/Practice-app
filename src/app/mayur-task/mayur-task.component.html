@@ -1,0 +1,15 @@
+<div class="container py-5">
+    <div *ngFor="let m of data">
+        <h1> {{ m.department }} </h1>
+
+        <div *ngFor="let n of m.employee"> 
+            <h5> Name :- {{ n.name }} </h5>
+            <h5> Gender :- {{ n.gender }} </h5>
+            <h5> Age :- {{ n.age }} </h5>
+
+            <h5 *ngFor="let o of n.hobbies"> Hobbies 
+                    <p> {{ o.hobby }} </p>
+            </h5>
+        </div>
+    </div>
+</div>

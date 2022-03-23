@@ -10,6 +10,7 @@ const routes: Routes = [
       { path:'', redirectTo:'list', pathMatch:'full' },
       { path:'form', component:MvpFormContainerComponent},
       { path:'list', component:MvpListContainerComponent},
+      { path:'edit/:id', component:MvpFormContainerComponent},
     ]
   }
 ];
