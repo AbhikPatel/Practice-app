@@ -1,0 +1,5 @@
+<app-mvp-form-presentation
+    (emitadddata)="addingdata($event)"
+    (emiteditdata)="updatingdata($event)"
+    [patching]="getdatabyid | async"
+></app-mvp-form-presentation>

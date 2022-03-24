@@ -1,5 +1,6 @@
 <div class="container py-5">
-    <form class="bg-primary p-5 text-white rounded" [formGroup]="usergroup">
+    <h2> {{ formhead }} </h2>
+    <form [formGroup]="mvpgroup">
         <div class="mb-3 row">
             <div class="col-6">
                 <label for="fname" class="form-label">Name</label>
@@ -25,6 +26,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success" (click)="onsubmit()">Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="onsubmit()" [disabled]="!mvpgroup.valid">Submit</button>
     </form>
 </div>

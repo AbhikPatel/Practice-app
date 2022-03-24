@@ -1,0 +1,29 @@
+<div class="container py-5">
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-primary my-5" routerLink="/mvp/form"> Add </button>
+    <button class="btn btn-primary my-5" (click)="openoverlay()" ><i class='bx bx-filter-alt'></i> Filter </button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Gender</th>
+        <th scope="col" colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of list, let i = index" class="text-center">
+        <td scope="row">{{ i + 1 }}</td>
+        <td> {{ m.fname }} </td>
+        <td> {{ m.age }} </td>
+        <td> {{ m.phone }} </td>
+        <td> {{ m.gender }} </td>
+        <td> <button class="btn btn-warning" (click)="onedit(m.id)"> Edit </button> </td>
+        <td> <button (click)="ondelete(m.id)" class="btn btn-danger"> Delete </button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
