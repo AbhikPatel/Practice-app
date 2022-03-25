@@ -1,10 +1,10 @@
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { mvpModel } from '../../mvp.model';
+import { OverlayModel } from '../../overlay.model';
 import { MvpListPresenterService } from '../mvp-list-presenter/mvp-list-presenter.service';
-import { MvpOverlayPresentationComponent } from '../mvp-overlay-presentation/mvp-overlay-presentation.component';
 
 @Component({
   selector: 'app-mvp-list-presentation',
@@ -19,10 +19,6 @@ export class MvpListPresentationComponent implements OnInit {
   @Input() public set list(listdata: mvpModel[] | null){
     if(listdata){
       this._listdata = listdata;
-      let fil = this._listdata.forEach(items => {
-        return items.gender = 'Male';
-      })
-      console.log(fil);
     }
   }
 
@@ -36,15 +32,20 @@ export class MvpListPresentationComponent implements OnInit {
   public _listdata:mvpModel[];
   public filterdata:mvpModel[];
 
-  constructor(private presenterservice:MvpListPresenterService, private route:Router, private overlay:Overlay) { 
-    this.emitdeleteid = new EventEmitter<number>()
+  constructor(private presenterservice:MvpListPresenterService, private route:Router, private cdr:ChangeDetectorRef) { 
+    this.emitdeleteid = new EventEmitter<number>();  
   }
 
   ngOnInit(): void {
+    
     this.presenterservice.deleteid$.subscribe(id => {
       this.emitdeleteid.emit(id)
     })
-    this.filter();
+
+    this.presenterservice.overlaydata$.subscribe(data => {
+      this._listdata =  this.filter(data);
+      this.cdr.detectChanges();
+    })
   }
 
   // On Delete Method 
@@ -59,20 +60,13 @@ export class MvpListPresentationComponent implements OnInit {
   }
 
   public openoverlay(){
-    let config = new OverlayConfig();
-    config.hasBackdrop = true;
-    config.positionStrategy = this.overlay.position().global().centerVertically().right();
-    const overlayRef = this.overlay.create(config);
-    const component = new ComponentPortal(MvpOverlayPresentationComponent)
-    const componentRef = overlayRef.attach(component);
-
-    overlayRef.backdropClick().subscribe(() => {
-      overlayRef.detach();
-    });
+    this.presenterservice.overlaydisplay();
   }
 
-  public filter(){
-    
-    
+  public filter(data:OverlayModel){
+    let filterdata = this._listdata.filter(item => {
+      return item.gender == data.gender;
+    })
+    return filterdata;
   }
 }

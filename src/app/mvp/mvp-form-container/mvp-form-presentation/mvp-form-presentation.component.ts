@@ -34,21 +34,20 @@ export class MvpFormPresentationComponent implements OnInit {
   public editmode:boolean;
   public formhead = 'Add User';
 
-  constructor(private formservice:MvpFormPresenterService, private route:Router) { 
+  constructor(private formservice:MvpFormPresenterService) { 
     this.mvpgroup = this.formservice.getgroup();
     this.emitadddata = new EventEmitter<mvpModel>();
     this.emiteditdata = new EventEmitter<mvpModel>();
   }
 
   ngOnInit(): void {
-    this.formservice.adddata$.subscribe(data => {
+    this.formservice.adddata$.subscribe(data => { 
       this.editmode === true ? this.emiteditdata.emit(data) : this.emitadddata.emit(data);
     })
   }
 
   public onsubmit(){
     this.formservice.getdata(this.mvpgroup.value);
-    this.route.navigateByUrl(`/mvp/list`);
   }
 
 }

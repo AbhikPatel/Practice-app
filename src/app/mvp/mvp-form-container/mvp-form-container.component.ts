@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { mvpModel } from '../mvp.model';
 import { MvpService } from '../mvp.service';
@@ -13,7 +13,7 @@ export class MvpFormContainerComponent implements OnInit {
 
   public getdatabyid:Observable<mvpModel>;
   public getactiveid:number;
-  constructor(private mainservice:MvpService, private active:ActivatedRoute) { 
+  constructor(private mainservice:MvpService, private active:ActivatedRoute, private route:Router) { 
     this.getactiveid = this.active.snapshot.params['id'];
     this.getdatabyid = new Observable<mvpModel>()
     if(this.getactiveid){
@@ -25,14 +25,17 @@ export class MvpFormContainerComponent implements OnInit {
   }
 
   public addingdata(data:mvpModel){
+    debugger
     this.mainservice.postdata(data).subscribe(() => {
       alert('Data Added');
+      this.route.navigateByUrl(`/mvp/list`);
     })
   }
 
   public updatingdata(data:mvpModel){
     this.mainservice.upatedata(this.getactiveid,data).subscribe(() => {
-      alert('Data Updated')
+      alert('Data Updated');
+      this.route.navigateByUrl(`/mvp/list`);
     })
   }
 }

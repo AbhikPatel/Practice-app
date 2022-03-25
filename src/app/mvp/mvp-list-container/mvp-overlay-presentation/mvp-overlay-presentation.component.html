@@ -4,11 +4,11 @@
         <div class="card-text py-3">
             <form [formGroup]="overlaygroup">
                 <div class="form-check py-2">
-                    <input class="form-check-input" type="checkbox" value="Male" id="male" formControlName = 'gender'>
+                    <input class="form-check-input" type="radio" value="Male" id="male" name="gender" formControlName = 'gender'>
                     <label class="form-check-label" for="male"> Male </label>
                 </div>
                 <div class="form-check py-2">
-                    <input class="form-check-input" type="checkbox" value="Female" id="female" formControlName = 'gender'>
+                    <input class="form-check-input" type="radio" value="Female" id="female" name="gender" formControlName = 'gender'>
                     <label class="form-check-label" for="female"> Female </label>
                 </div>
                 <button type="submit" class="btn btn-success" (click)="onsubmit()"> Submit </button>

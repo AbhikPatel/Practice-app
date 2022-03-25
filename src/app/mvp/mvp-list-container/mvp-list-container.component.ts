@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { mvpModel } from '../mvp.model';
 import { MvpService } from '../mvp.service';
+import { OverlayModel } from '../overlay.model';
 
 @Component({
   selector: 'app-mvp-list-container',
@@ -26,6 +27,10 @@ export class MvpListContainerComponent implements OnInit {
       alert('Data Deleted')
       this.data$ = this.mainservice.getdata();  
     })
+  }
+
+  public overlaydata(data:OverlayModel){
+    
   }
 
 }
