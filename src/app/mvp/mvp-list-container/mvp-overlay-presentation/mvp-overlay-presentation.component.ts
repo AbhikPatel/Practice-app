@@ -14,19 +14,23 @@ export class MvpOverlayPresentationComponent implements OnInit {
 
   @Output() emitoverlaydata:EventEmitter<OverlayModel>;
   public overlaygroup:FormGroup;
+  public temdata:OverlayModel;
   constructor(private service:MvpOverlayPresenterService) { 
     this.overlaygroup = this.service.addgroup();
     this.emitoverlaydata = new EventEmitter<OverlayModel>();
+    console.log(this.temdata);
+    
   }
 
   ngOnInit(): void {
     this.service.overlaydata$.subscribe(data => {
       this.emitoverlaydata.emit(data);
-      this.overlaygroup.patchValue(data);
     });
   }
   
   public onsubmit(){
     this.service.getoverlaydata(this.overlaygroup.value);
+    this.temdata = this.overlaygroup.value
+    console.log(this.temdata)
   }
 }

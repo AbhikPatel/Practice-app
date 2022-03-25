@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { OverlayModel } from '../../overlay.model';
 
@@ -17,7 +17,8 @@ export class MvpOverlayPresenterService {
   public addgroup(){
     return this.fb.group(
       {
-        gender:['',Validators.required]
+        gender:[''],
+        age:[''],
       }
     )
   }
