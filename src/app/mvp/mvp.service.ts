@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { mvpModel } from './mvp.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MvpService {
 
   // Api Link 
   private api:string = 'http://localhost:3000/mvpdata';
+  
   constructor(private http:HttpClient) { }
 
   // Getting data from api 

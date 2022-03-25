@@ -61,13 +61,21 @@ export class MvpListPresentationComponent implements OnInit {
     this.presenterservice.overlaydisplay();
   }
 
-  public filter(data: OverlayModel) {
+  public filter(data: any) {
+
     if (!this.filterdata)
       this.filterdata = [...this._listdata];
 
-    let Fdata = this.filterdata.filter((item: any) => {
-      return item.gender == data.gender;
+    let keys:string[] = Object.keys(data)
+
+    keys.forEach((key: any) => {
+      if (data[key]) {
+        this.filterdata = this.filterdata.filter((item: any) => {
+          return item[key].toString().toLowerCase() === data[key].toString().toLowerCase();
+        })
+      }
     })
-    this._listdata = Fdata;
+    
+    this._listdata = this.filterdata;
   }
 }

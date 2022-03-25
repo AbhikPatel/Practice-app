@@ -24,7 +24,7 @@ export class MvpListPresenterService {
   }
 
   public getdeleteid(id:number){
-    this.deleteid.next(id);
+    this.deleteid.next(id); 
   }
 
   public overlaydisplay(){
@@ -34,10 +34,6 @@ export class MvpListPresenterService {
     const overlayRef = this.overlay.create(config);
     const component = new ComponentPortal(MvpOverlayPresentationComponent)
     const componentRef = overlayRef.attach(component);
-
-    overlayRef.backdropClick().subscribe(() => {
-      overlayRef.detach();
-    });
     
     componentRef.instance.emitoverlaydata.subscribe(data => {
       if(data){

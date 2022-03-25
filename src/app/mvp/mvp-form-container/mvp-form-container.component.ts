@@ -25,7 +25,6 @@ export class MvpFormContainerComponent implements OnInit {
   }
 
   public addingdata(data:mvpModel){
-    debugger
     this.mainservice.postdata(data).subscribe(() => {
       alert('Data Added');
       this.route.navigateByUrl(`/mvp/list`);
