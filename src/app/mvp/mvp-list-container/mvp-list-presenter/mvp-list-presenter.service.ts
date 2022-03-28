@@ -28,10 +28,13 @@ export class MvpListPresenterService {
   }
 
   public overlaydisplay(){
-    let config = new OverlayConfig();
-    config.hasBackdrop = true;
-    config.positionStrategy = this.overlay.position().global().centerVertically().right();
-    const overlayRef = this.overlay.create(config);
+   
+    const overlayRef = this.overlay.create({
+      width:'500px',
+      height:'500px',
+      hasBackdrop : true,
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+    });
     const component = new ComponentPortal(MvpOverlayPresentationComponent)
     const componentRef = overlayRef.attach(component);
     

@@ -22,52 +22,6 @@
       "id": 3
     }
   ],
-  "employees": [
-    {
-      "fname": "Abhishek",
-      "age": 22,
-      "phone": "9925607945",
-      "gender": "Male",
-      "id": 2
-    },
-    {
-      "fname": "Abhishek",
-      "age": 22,
-      "phone": "9925607945",
-      "gender": "Female",
-      "id": 3
-    },
-    {
-      "fname": "Abhishek",
-      "age": 22,
-      "phone": "9925607945",
-      "gender": "Male",
-      "id": 4
-    },
-    {
-      "fname": "Ankit",
-      "age": 78,
-      "phone": "992560794",
-      "gender": "Male",
-      "id": 5
-    },
-    {
-      "fname": "Ankit",
-      "age": 78,
-      "phone": "992560794",
-      "gender": "Female",
-      "id": 6
-    }
-  ],
-  "crud": [
-    {
-      "fname": "Abhishek Kishorbhai Patel",
-      "age": 22,
-      "phone": "9925607945",
-      "gender": "Male",
-      "id": 1
-    }
-  ],
   "mvpdata": [
     {
       "fname": "Abhishek Patel",
@@ -152,6 +106,32 @@
       "phone": "992560794",
       "gender": "Female",
       "id": 16
+    }
+  ],
+  "customer": [
+    {
+      "fname": "Abhishek Kishorbhai Patel",
+      "phone": "09925607945",
+      "age": 78,
+      "city": "Valsad",
+      "gender": "Female",
+      "id": 5
+    },
+    {
+      "fname": "Abhishek Kishorbhai Patel",
+      "phone": "09925607945",
+      "age": 22,
+      "city": "Valsad",
+      "gender": "Male",
+      "id": 6
+    },
+    {
+      "fname": "Ankit",
+      "phone": "09925607945",
+      "age": 22,
+      "city": "Valsad",
+      "gender": "Female",
+      "id": 7
     }
   ]
 }

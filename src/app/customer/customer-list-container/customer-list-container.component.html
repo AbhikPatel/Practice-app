@@ -1,0 +1,7 @@
+<app-customer-list-presentation
+    [list] = "getdata$ | async"
+    (emitOverlayAdd)="addData($event)"
+    (emitDeleteid)="DeleteData($event)"
+    
+    (emitOverlayEdit)="update($event)"
+></app-customer-list-presentation>
