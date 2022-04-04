@@ -1,0 +1,5 @@
+<app-mentor-list-presentation
+    (emitFormData)="emitFormData($event)"
+    (emitDeleteId)="emitDeleteId($event)"
+    [list]="getData$ | async"
+></app-mentor-list-presentation>

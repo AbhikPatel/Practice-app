@@ -13,12 +13,14 @@ export class SubjectListComponent implements OnInit {
   public activedata:UserModel;
   public activeid:number;
   public editmode:boolean;
+  public user = new  UserModel(15,54);
 
   constructor(private service:SubjectService) {
   }
   
   ngOnInit(): void {
     this.display();
+    console.log(this.user);
   }
 
   public display(){

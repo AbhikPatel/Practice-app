@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'mvp', loadChildren: () => import('./mvp/mvp.module').then(m => m.MvpModule) },
   { path: 'mayur', loadChildren: () => import('./mayur-task/mayur-task.module').then(m => m.MayurTaskModule) },
   { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
+  { path: 'mentors', loadChildren: () => import('./mentors/mentors.module').then(m => m.MentorsModule) },
+  { path: 'file', loadChildren: () => import('./file-upload/file-upload.module').then(m => m.FileUploadModule) },
+  { path: 'upload', loadChildren: () => import('./file-upload-demo/file-upload-demo.module').then(m => m.FileUploadDemoModule) },
 ];
 
 @NgModule({

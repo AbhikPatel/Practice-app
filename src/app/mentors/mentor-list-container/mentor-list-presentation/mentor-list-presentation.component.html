@@ -1,0 +1,36 @@
+<div class="container py-5">
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" (click)="openForm()"> Add </button>
+        <button class="btn btn-success"> Filter </button>
+    </div>
+    <table class="table my-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Department</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of list, let i = index">
+            <td scope="row"> {{ i+1 }} </td>
+            <td scope="row"> {{ data.firstname }} </td>
+            <td scope="row"> {{ data.lastname }} </td>
+            <td scope="row"> {{ data.age }} </td>
+            <td scope="row"> {{ data.phone }} </td>
+            <td scope="row"> {{ data.dob }} </td>
+            <td scope="row"> {{ data.department }} </td>
+            <td scope="row"> {{ data.mail }} </td>
+            <td scope="row"> {{ data.gender }} </td>
+            <td> <button class="btn btn-warning me-3" (click)="openForm(data)"> Edit </button> <button class="btn btn-danger" (click)="openDelete(data.id)"> Delete </button> </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

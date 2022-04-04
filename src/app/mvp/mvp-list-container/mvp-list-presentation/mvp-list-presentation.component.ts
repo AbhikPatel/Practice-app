@@ -16,8 +16,12 @@ export class MvpListPresentationComponent implements OnInit {
   // Setting data 
   @Input() public set list(listdata: mvpModel[] | null) {
     if (listdata) {
+      if(!this.newcopy){
+        this.newcopy = listdata;
+      }
       this._listdata = listdata;
     }
+
   }
 
   // Getting data 
@@ -29,6 +33,7 @@ export class MvpListPresentationComponent implements OnInit {
   public templist: mvpModel[];
   private _listdata: mvpModel[];
   public filterdata: mvpModel[];
+  public newcopy: mvpModel[];
 
   constructor(private presenterservice: MvpListPresenterService, private route: Router, private cdr: ChangeDetectorRef) {
     this.emitdeleteid = new EventEmitter<number>();
@@ -62,7 +67,6 @@ export class MvpListPresentationComponent implements OnInit {
   }
 
   public filter(data: any) {
-
     if (!this.filterdata)
       this.filterdata = [...this._listdata];
 
@@ -77,5 +81,6 @@ export class MvpListPresentationComponent implements OnInit {
     })
     
     this._listdata = this.filterdata;
+    // this.filterdata = [];
   }
 }
