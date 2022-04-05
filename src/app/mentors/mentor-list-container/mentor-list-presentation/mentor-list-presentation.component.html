@@ -1,9 +1,9 @@
 <div class="container py-5">
     <div class="d-flex justify-content-between">
         <button class="btn btn-primary" (click)="openForm()"> Add </button>
-        <button class="btn btn-success"> Filter </button>
+        <button class="btn btn-success" (click)="onFilter()"> Filter </button>
     </div>
-    <table class="table my-5">
+    <table class="table table-striped my-5 bg-white shadow rounded-3">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -33,4 +33,6 @@
           </tr>
         </tbody>
       </table>
+
+      <button class="btn btn-dark" (click)="onDemo()"> Demo </button>
 </div>

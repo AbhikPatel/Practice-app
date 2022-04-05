@@ -18,4 +18,8 @@ export class FiledemoService {
   public getData():Observable<UploadFileModel[]>{
     return this.http.get<UploadFileModel[]>(`${this.api}`)
   }
+
+  public deleteData(id:number):Observable<UploadFileModel>{
+    return this.http.delete<UploadFileModel>(`${this.api}/${id}`)
+  }
 }

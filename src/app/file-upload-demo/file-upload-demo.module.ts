@@ -9,6 +9,7 @@ import { FileUploadPresentationComponent } from './upload-demo-container/file-up
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FiledemoService } from './filedemo.service';
 
 
 @NgModule({
@@ -25,6 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
+  ],
+  providers:[
+    FiledemoService
   ]
 })
 export class FileUploadDemoModule { }

@@ -1,2 +1,2 @@
-<app-file-list-presentation [list]="getFileData$ | async"></app-file-list-presentation>
-<app-file-upload-presentation (emitFileData)="emitFileData($event)"></app-file-upload-presentation>
+<app-file-upload-presentation [list]="getFileData$ | async"  (emitFileData)="emitFileData($event)"></app-file-upload-presentation>
+<app-file-list-presentation [list]="getFileData$ | async" (emitDeleteId)="emitDeleteId($event)"></app-file-list-presentation>

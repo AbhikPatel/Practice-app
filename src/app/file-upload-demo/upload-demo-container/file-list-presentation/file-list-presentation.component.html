@@ -1,19 +1,22 @@
-<div class="container">
-    <table class="table">
+<div class="container p-5">
+    <table class="table table-striped shadow">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Size</th>
             <th scope="col">Type</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let data of list, let i = index">
             <th scope="row">{{ i+1 }}</th>
             <td>{{data.name}}</td>
-            <td>{{data.size}}</td>
-            <td>{{data.type}}</td>
+            <td>{{data.size}} MB</td>
+            <td>.{{data.type}}</td>
+            <td> <button class="btn btn-danger me-3" (click)="onDelete(data.id)"> Delete</button> 
+             <button class="btn btn-primary" (click)="onView(data.type, data.content)"> View </button></td>
           </tr>
         </tbody>
       </table>

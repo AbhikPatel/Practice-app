@@ -25,12 +25,11 @@ export class MentorListPresentationComponent implements OnInit {
   @Output() public emitFormData:EventEmitter<mentorsModel>
   @Output() public emitDeleteId:EventEmitter<number>
 
+  
   private _listData:mentorsModel[];
   constructor(private listservice:MentorListPresenterService) { 
     this.emitFormData = new EventEmitter<mentorsModel>();
     this.emitDeleteId = new EventEmitter<number>();
-
-    
   }
   
   ngOnInit(): void {
@@ -50,5 +49,41 @@ export class MentorListPresentationComponent implements OnInit {
 
   public openDelete(id:number){
     this.listservice.openPopUp(id)
+  }
+
+  public onFilter(){
+    this.listservice.openFilter()
+  }
+
+  Products = [
+    {
+      id:1,
+      name:'laptop',
+      price:null,
+    },
+    {
+      id:2,
+      name:'TV',
+      price:null,
+    },
+    {
+      id:3,
+      name:'Bottle',
+      price:null,
+    },
+    {
+      id:4,
+      name:'Bag',
+      price:null,
+    },
+    {
+      id:5,
+      name:'PC',
+      price:null,
+    },
+  ];
+
+  public onDemo(){
+    // this.key = Object.keys(this.Products)
   }
 }

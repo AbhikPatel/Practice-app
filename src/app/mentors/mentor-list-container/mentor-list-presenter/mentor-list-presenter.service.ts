@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { DeletePopUpComponent } from 'src/app/shared/delete-pop-up/delete-pop-up.component';
 import { mentorsModel } from '../../mentor.model';
+import { MentorFilterPresentationComponent } from '../mentor-list-presentation/mentor-filter-presentation/mentor-filter-presentation.component';
 import { MentorFormPresentationComponent } from '../mentor-list-presentation/mentor-form-presentation/mentor-form-presentation.component';
 
 @Injectable({
@@ -57,15 +58,36 @@ export class MentorListPresenterService {
     })
 
     const component = new ComponentPortal(DeletePopUpComponent)
-    const compoentRef = overlayRef.attach(component);
+    const componentRef = overlayRef.attach(component);
 
-    compoentRef.instance.emitNo.subscribe(() => {
+    componentRef.instance.emitNo.subscribe(() => {
       overlayRef.detach();
     })
     
-    compoentRef.instance.emitYes.subscribe(() => {
+    componentRef.instance.emitYes.subscribe(() => {
       this.deleteId.next(id);
       overlayRef.detach();
     })
   }
+
+  public openFilter(){
+    let overlayRef = this.overlay.create({
+      width:'800px',
+      hasBackdrop:true,
+      positionStrategy: this.overlay.position().global().centerVertically().right(),
+    })
+
+    const component = new ComponentPortal(MentorFilterPresentationComponent)
+    const componentRef = overlayRef.attach(component);
+
+    componentRef.instance.emitFilterCancel.subscribe(() => {
+      overlayRef.detach()
+    })
+
+    componentRef.instance.emitFilterData.subscribe(data => {
+      
+    })
+  
+  }
+  
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UploadFileModel } from '../../uploaddemo.model';
 import { FileUploadPresenterService } from '../file-upload-presenter/file-upload-presenter.service';
 
@@ -11,10 +11,24 @@ import { FileUploadPresenterService } from '../file-upload-presenter/file-upload
 })
 export class FileUploadPresentationComponent implements OnInit {
 
-  @Output() public emitFileData:EventEmitter<UploadFileModel>
+  @Input() public set list(listdata:UploadFileModel[] | null){
+    if(listdata){
+      this._listdata = listdata;
+    }
+  }
+  public get list():UploadFileModel[] | null{
+    return this._listdata
+  }
+  @Output() public emitFileData:EventEmitter<UploadFileModel>;
+  @Output() public emitFilename:EventEmitter<string>;
   public uploadFile:UploadFileModel;
+  public fileData:File;
+  private filename:string;
+  private _listdata:UploadFileModel[];
+
   constructor(private service:FileUploadPresenterService) {
     this.emitFileData = new EventEmitter<UploadFileModel>();
+    this.emitFilename = new EventEmitter<string>();
   }
 
   ngOnInit(): void {
@@ -27,11 +41,19 @@ export class FileUploadPresentationComponent implements OnInit {
   }
 
   public onChange(data:any){
-    this.uploadFile = data.files[0]
+    this.fileData = data.files[0];
+    this.filename = this.fileData.name.split('.')[0];
   }
 
   public onUpload(){
-    this.service.getFileData(this.uploadFile)
+    let output = this._listdata.find(items => {
+      return items.name === this.filename;  
+    })
+    
+    if(output){
+      alert('This File already exits');
+    }else{
+      this.service.getFileData(this.fileData);
+    }
   }
-
 }
