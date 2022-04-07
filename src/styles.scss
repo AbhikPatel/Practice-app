@@ -3,6 +3,7 @@
 // Project base and component style import
 @import "~/src/assets/scss/base/_index.scss";
 
+@import "~/src/assets/scss/vendors/_index.scss";
 // Project Specific Components
 @import "~/src/assets/scss/component/_index.scss";
 
@@ -11,5 +12,3 @@
 
 
 @import "~/src/assets/scss/utilities/_index.scss";
-
-@import "~/src/assets/scss/vendors/_index.scss";

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
+    console.log('Construct Called');
   }
 
+  ngOnInit(): void {
+    console.log('ngOnInit called');
+    this.ngOnChange();
+  }
+  
+  ngOnChange(){
+    console.log('ngOnChange called');
+  }
 }

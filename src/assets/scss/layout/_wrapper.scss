@@ -1,13 +1,21 @@
 .wrapper{
 
     .hamburger{
-        left: 235px;
+        left: 230px;
         top: 50px;
         cursor: pointer;
         transition: $transition;
+        
+        @include media-breakpoint-down(lg){
+            left: 30px;
+            z-index: 9999;
+            top: 20px;
+        }
 
         .bx{
             border-radius: 50%;
+            height: 40px;
+            width: 40px;
         }
     }
 
@@ -16,18 +24,28 @@
         & .sidebar{
             flex:0 0 60px;
 
+            @include media-breakpoint-down(lg){
+                left: 0;
+            }
+
             h1{
                 transform: $transform;
+
+                @include media-breakpoint-down(lg){
+                    transform: 0px;
+                }
             }
 
             .text{
                 transform: $transform;
+                @include media-breakpoint-down(lg){
+                    transform: 0px;
+                }
             }
         }
 
         & .hamburger{
             left: 45px;
-
             transform: rotate(180deg);
         }
     }

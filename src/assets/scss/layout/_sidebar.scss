@@ -1,6 +1,13 @@
 .sidebar{
     flex:0 0 $sidebar-width;
     transition: $transition;
+
+    @include media-breakpoint-down(lg){
+        position: absolute;
+        height: 100%;
+        left: -250px;
+    }
+
     
     h1{
         transition: $transition;

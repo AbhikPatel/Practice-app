@@ -17,11 +17,27 @@ export class CustomerListContainerComponent implements OnInit {
   constructor(private service:CustomerService) { 
     this.getdata$ = new Observable<CustomerData[]>();
     this.editdata = new EventEmitter<CustomerData>();
+    console.log('Constructor called');
+    
   }
 
   ngOnInit(): void {
     this.getdata$ = this.service.getdata();
+    console.log('ngOnInit called'); 
   }
+
+  ngOnChanges(){
+    console.log('ngOnChanges called');
+  }
+
+  ngDoChecked(){
+    console.log('ngDoChecked called');
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit called');
+  }
+
   
   public addData(data:CustomerData){
     this.service.postdata(data).subscribe(() => {
