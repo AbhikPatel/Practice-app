@@ -1,0 +1,220 @@
+{
+    "database":[
+        {
+            "id":1,
+            "department":"Frontend",
+            "employees":[
+                {
+                    "name":"Abhishek Patel",
+                    "age":22,
+                    "phone":9925607945,
+                    "city":"Valsad",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Ankit Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Vapi",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Aman Patel",
+                    "age":20,
+                    "phone":9925607945,
+                    "city":"Vapi",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Pooja Manvani",
+                    "age":24,
+                    "phone":9925607945,
+                    "city":"Valsad",
+                    "gender":"Female",
+                    "hobbies":[
+                        {
+                            "hobby1":"Chess"
+                        }
+                    ]
+                },
+                {
+                    "name":"Chirag Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Daman",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        }
+                    ]
+                },
+                {
+                    "name":"Hrishikesh Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Valsad",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Nirali Tandel",
+                    "age":20,
+                    "phone":9925607945,
+                    "city":"Kosamba",
+                    "gender":"Female",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Sherya Patel",
+                    "age":20,
+                    "phone":9925607945,
+                    "city":"Valsad",
+                    "gender":"Female",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Viral Patel",
+                    "age":27,
+                    "phone":9925607945,
+                    "city":"Gandevi",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id":2,
+            "department":"Android",
+            "employees":[
+                {
+                    "name":"Priyank Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Bilimora",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Devansh Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Bilimora",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Vrutti Patel",
+                    "age":21,
+                    "phone":9925607945,
+                    "city":"Bilimora",
+                    "gender":"Female",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
