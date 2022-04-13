@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'file', loadChildren: () => import('./file-upload/file-upload.module').then(m => m.FileUploadModule) },
   { path: 'upload', loadChildren: () => import('./file-upload-demo/file-upload-demo.module').then(m => m.FileUploadDemoModule) },
   { path: 'cardDemo', loadChildren: () => import('./card-demo/card-demo.module').then(m => m.CardDemoModule) },
+  { path: 'filterDemo', loadChildren: () => import('./filter-demo/filter-demo.module').then(m => m.FilterDemoModule) },
 ];
 
 @NgModule({

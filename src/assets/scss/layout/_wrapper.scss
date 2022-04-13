@@ -5,6 +5,7 @@
         top: 50px;
         cursor: pointer;
         transition: $transition;
+        z-index: 9999;
         
         @include media-breakpoint-down(lg){
             left: 30px;

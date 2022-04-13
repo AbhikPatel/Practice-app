@@ -1,7 +1,11 @@
 <div class="container py-5">
   <div class="d-flex justify-content-between">
     <button class="btn btn-primary my-5" routerLink="/mvp/form"> Add </button>
-    <button class="btn btn-primary my-5" (click)="openoverlay()" ><i class='bx bx-filter-alt'></i> Filter </button>
+    <button class="btn btn-primary my-5 position-relative" (click)="openoverlay()" ><i class='bx bx-filter-alt'></i> Filter 
+      <span *ngIf="notification" class="position-absolute top-0 start-100 noti translate-middle bg-danger border border-light rounded-circle">
+        <span class="visually-hidden">New alerts</span>
+      </span>
+    </button>
   </div>
   <table class="table table-striped">
     <thead>

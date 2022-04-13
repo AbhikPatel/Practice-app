@@ -215,6 +215,56 @@
                     ]
                 }
             ]
+        },
+        {
+            "id":3,
+            "department":"Backend",
+            "employees":[
+                {
+                    "name":"Jay Patel",
+                    "age":19,
+                    "phone":9925607945,
+                    "city":"Navsari",
+                    "gender":"Male",
+                    "hobbies":[]
+                },
+                {
+                    "name":"XYZ Patel",
+                    "age":25,
+                    "phone":9925607945,
+                    "city":"Mars",
+                    "gender":"Others",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                },
+                {
+                    "name":"Mrunal Patel",
+                    "age":26,
+                    "phone":9925607945,
+                    "city":"Valsad",
+                    "gender":"Male",
+                    "hobbies":[
+                        {
+                            "hobbyname":"Chess"
+                        },
+                        {
+                            "hobbyname":"Cube Solving"
+                        },
+                        {
+                            "hobbyname":"Games"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

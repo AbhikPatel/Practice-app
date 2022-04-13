@@ -34,6 +34,7 @@ export class MvpListPresentationComponent implements OnInit {
   private _listdata: mvpModel[];
   public filterdata: mvpModel[];
   public newcopy: mvpModel[];
+  public notification:boolean = false;
 
   constructor(private presenterservice: MvpListPresenterService, private route: Router, private cdr: ChangeDetectorRef) {
     this.emitdeleteid = new EventEmitter<number>();
@@ -47,6 +48,9 @@ export class MvpListPresentationComponent implements OnInit {
 
     this.presenterservice.overlaydata$.subscribe(data => {
       this.filter(data);
+      if(!data){
+        console.log('no Data found');  
+      }
       // this.cdr.detectChanges();
     })
   }
@@ -54,7 +58,6 @@ export class MvpListPresentationComponent implements OnInit {
   // On Delete Method 
   public ondelete(id: number) {
     this.presenterservice.getdeleteid(id);
-
   }
 
   // On Edit Method 
@@ -81,6 +84,8 @@ export class MvpListPresentationComponent implements OnInit {
     })
     
     this._listdata = this.filterdata;
-    // this.filterdata = [];
+    if(this.filterdata){
+      this.notification = true;
+    }
   }
 }

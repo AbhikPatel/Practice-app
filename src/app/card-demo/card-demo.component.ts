@@ -9,7 +9,7 @@ import { cardDemoModel } from './cardDemo.model';
 })
 export class CardDemoComponent implements OnInit {
 
-  public filterData:string
+  public filterData:string;
   public departmentData:cardDemoModel[] | null;
   constructor(private service:CardDemoService) { 
   }
@@ -18,6 +18,12 @@ export class CardDemoComponent implements OnInit {
     this.service.getData().subscribe(items => {
       this.departmentData = items
     })
+
+    console.log(this.filterData);
+  }
+  
+  ngDoCheck(){
+    console.log(this.filterData);
   }
 
 }

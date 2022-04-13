@@ -8,7 +8,7 @@ import { cardDemoModel } from './cardDemo.model';
 })
 export class CardDemoService {
 
-  api:string = 'http://localhost:3000/database'
+  api:string = 'http://localhost:3000/database';
 
   constructor(private http:HttpClient) { }
 
