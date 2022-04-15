@@ -38,10 +38,12 @@ export class FilterDemoComponent implements OnInit {
   Employees: any[] = [
     { id: 1, fname: 'Abhishek', age: 22, gender: 'Male', phone: 9925607945, salary: 15000, company: '1Rivet', city: 'Valsad' },
     { id: 2, fname: 'Ankit', age: 21, gender: 'Male', phone: 9925607945, salary: 150000, company: '1Rivet', city: 'Vapi' },
+    { id: 4, fname: 'Nirali', age: 12, gender: 'Female', phone: 9925607945, salary: 5000, company: '1Rivet', city: 'Valsad' },
     { id: 3, fname: 'Aman', age: 21, gender: 'Male', phone: 9925607945, salary: 25000, company: '1Rivet', city: 'Vapi' },
     { id: 4, fname: 'Pooja', age: 23, gender: 'Female', phone: 9925607945, salary: 5000, company: '1Rivet', city: 'Valsad' },
     { id: 5, fname: 'Dharmit', age: 25, gender: 'Male', phone: 9925607945, salary: 35000, company: '1Rivet', city: 'Surat' },
     { id: 6, fname: 'Tanmay', age: 24, gender: 'Male', phone: 9925607945, salary: 35000, company: '1Rivet', city: 'Surat' },
+    { id: 4, fname: 'Shreya', age: 20, gender: 'Female', phone: 9925607945, salary: 5000, company: '1Rivet', city: 'Valsad' },
     { id: 7, fname: 'Viral', age: 27, gender: 'Male', phone: 9925607945, salary: 45000, company: '1Rivet', city: 'Gandevi' },
   ];
 
