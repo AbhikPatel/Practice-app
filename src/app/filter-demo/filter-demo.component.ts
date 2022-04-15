@@ -45,6 +45,7 @@ export class FilterDemoComponent implements OnInit {
     { id: 6, fname: 'Tanmay', age: 24, gender: 'Male', phone: 9925607945, salary: 35000, company: '1Rivet', city: 'Surat' },
     { id: 4, fname: 'Shreya', age: 20, gender: 'Female', phone: 9925607945, salary: 5000, company: '1Rivet', city: 'Valsad' },
     { id: 7, fname: 'Viral', age: 27, gender: 'Male', phone: 9925607945, salary: 45000, company: '1Rivet', city: 'Gandevi' },
+    { id: 8, fname: 'Sushil', age: 'Infinity', gender: 'Others', phone: 9925607945, salary: 999999999, company: '1Rivet', city: 'Atul' },
   ];
 
   public onFilter() {

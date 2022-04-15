@@ -9,6 +9,7 @@ import { cardDemoModel } from './cardDemo.model';
 })
 export class CardDemoComponent implements OnInit {
 
+  public toster = true;
   public filterData:string;
   public departmentData:cardDemoModel[] | null;
   constructor(private service:CardDemoService) { 
