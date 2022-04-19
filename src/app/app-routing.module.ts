@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'cardDemo', loadChildren: () => import('./card-demo/card-demo.module').then(m => m.CardDemoModule) },
   { path: 'filterDemo', loadChildren: () => import('./filter-demo/filter-demo.module').then(m => m.FilterDemoModule) },
   { path: 'poker', loadChildren: () => import('./poker/poker.module').then(m => m.PokerModule) },
+  { path: 'shopping', loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingModule) },
 ];
 
 @NgModule({

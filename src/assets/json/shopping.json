@@ -1,0 +1,32 @@
+{
+    "customer":[
+        {
+            "name":"Abhishek",
+            "age":28,
+            "gender":"Male",
+            "phone":9925607945,
+            "email":"abhikpatel15@gmail.com"
+        },
+        {
+            "name":"Chirag",
+            "age":25,
+            "gender":"Male",
+            "phone":9925607945,
+            "email":"cp15@gmail.com"
+        },
+        {
+            "name":"Jigar",
+            "age":23,
+            "gender":"Female",
+            "phone":9925607945,
+            "email":"jigaboy10@gmail.com"
+        },
+        {
+            "name":"Nirali",
+            "age":15,
+            "gender":"Female",
+            "phone":9925607945,
+            "email":"nirali15tandel@gmail.com"
+        }
+    ]
+}
