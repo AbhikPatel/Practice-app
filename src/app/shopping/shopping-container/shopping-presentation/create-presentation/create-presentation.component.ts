@@ -12,14 +12,16 @@ import { CreatePresenterService } from '../create-presenter/create-presenter.ser
 export class CreatePresentationComponent implements OnInit {
 
   @Output() public emitSubmitData:EventEmitter<string>;
+
   public productGroup:FormGroup;
   public productList:productModel[];
   public btnName:string;
   public editId:number;
   public customerEmail:string;
+
   constructor(private service:CreatePresenterService) { 
     this.productList = [];
-    this.btnName = 'Add';
+    this.btnName = '+ Add';
     this.productGroup = this.service.group();
     this.emitSubmitData = new EventEmitter();
   }
@@ -30,7 +32,7 @@ export class CreatePresentationComponent implements OnInit {
   public onAdd(){
     this.btnName === 'Edit' ? this.productList[this.editId] = this.productGroup.value : this.productList.push(this.productGroup.value);
     this.productGroup.reset();
-    this.btnName = 'Add';
+    this.btnName = '+ Add';
   }
 
   public onDelete(id:number){
@@ -48,6 +50,6 @@ export class CreatePresentationComponent implements OnInit {
   }
 
   public onCancel(){
-
+    this.emitSubmitData.emit();
   }
 }

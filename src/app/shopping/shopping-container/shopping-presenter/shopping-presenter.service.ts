@@ -16,11 +16,11 @@ export class ShoppingPresenterService {
     this.customerMail$ = this.customerMail.asObservable();
   }
 
-  public openCreate(mail?:any){
+  public openCreate(){
     const Overlayref = this.overlay.create({
       hasBackdrop:true,
-      height:'600px',
-      width:'1200px',
+      // height:'600px',
+      // width:'1200px',
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
     })
 
@@ -28,25 +28,24 @@ export class ShoppingPresenterService {
     const componentRef = Overlayref.attach(component);
 
     componentRef.instance.emitSubmitData.subscribe((data) => {
-      this.openView(mail);
+      this.openView();
       Overlayref.detach();
       this.customerMail.next(data);
     })
   }
   
-  public openView(data?:any){
-    debugger
+  public openView(){
     const Overlayref = this.overlay.create({
       hasBackdrop:true,
       height:'600px',
-      width:'1200px',
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
     })
 
     const component = new ComponentPortal(FinalPresentationComponent);
     const componentRef = Overlayref.attach(component);
 
-    componentRef.instance.customerData = data;
-    
+    Overlayref.backdropClick().subscribe(() => {
+      Overlayref.detach();
+    })
   }
 }
