@@ -9,18 +9,13 @@ import { ShoppingService } from '../shopping.service';
 })
 export class ShoppingContainerComponent implements OnInit {
 
-  public getEmailId$:Observable<any>;
-  public customerMail:string;
+  public getData$:Observable<any>;
   constructor(private service:ShoppingService) { 
-    this.getEmailId$ = new Observable();
+    this.getData$ = new Observable();
   }
 
   ngOnInit(): void {
-    this.getEmailId$ = this.service.getByEmail(this.customerMail); 
-  }
-
-  public emitCustomerMail(mail:string){
-    this.customerMail = mail;
+    this.getData$ = this.service.getData();
   }
 
 }

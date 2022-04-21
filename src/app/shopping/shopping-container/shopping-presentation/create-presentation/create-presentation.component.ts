@@ -46,7 +46,7 @@ export class CreatePresentationComponent implements OnInit {
   }
 
   public onSubmit(){
-    this.emitSubmitData.emit();
+    this.emitSubmitData.emit(this.customerEmail);
   }
 
   public onCancel(){

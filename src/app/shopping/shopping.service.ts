@@ -7,11 +7,11 @@ export class ShoppingService {
 
   public api:string;
   constructor(private http: HttpClient) { 
-    this.api = 'http://localhost:3000/';
+    this.api = 'http://localhost:3000/customer';
   }
 
-  public getByEmail(data:string):Observable<any>{
-    return this.http.get<any>(`${this.api}customer/${data}`)
+  public getData():Observable<any>{
+    return this.http.get<any>(`${this.api}`)
   }
 
 }

@@ -19,8 +19,6 @@ export class ShoppingPresenterService {
   public openCreate(){
     const Overlayref = this.overlay.create({
       hasBackdrop:true,
-      // height:'600px',
-      // width:'1200px',
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
     })
 
@@ -30,7 +28,7 @@ export class ShoppingPresenterService {
     componentRef.instance.emitSubmitData.subscribe((data) => {
       this.openView();
       Overlayref.detach();
-      this.customerMail.next(data);
+      this.customerMail.next(data);  
     })
   }
   
