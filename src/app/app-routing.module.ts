@@ -9,9 +9,7 @@ const routes: Routes = [
   { path: 'mentors', loadChildren: () => import('./mentors/mentors.module').then(m => m.MentorsModule) },
   { path: 'file', loadChildren: () => import('./file-upload/file-upload.module').then(m => m.FileUploadModule) },
   { path: 'upload', loadChildren: () => import('./file-upload-demo/file-upload-demo.module').then(m => m.FileUploadDemoModule) },
-  { path: 'cardDemo', loadChildren: () => import('./card-demo/card-demo.module').then(m => m.CardDemoModule) },
   { path: 'filterDemo', loadChildren: () => import('./filter-demo/filter-demo.module').then(m => m.FilterDemoModule) },
-  { path: 'poker', loadChildren: () => import('./poker/poker.module').then(m => m.PokerModule) },
 ];
 
 @NgModule({
