@@ -1,0 +1,46 @@
+{
+    "prescription":[
+        {
+            "name":"Abhishek Patel",
+            "gender":"Male",
+            "pharmacy":"Sangivani",
+            "age":28,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Chirag Patel",
+            "gender":"Male",
+            "pharmacy":"Sangivani",
+            "age":25,
+            "date":"25 May 2022"
+        },
+        {
+            "name":"Nirali Patel",
+            "gender":"Female",
+            "pharmacy":"Kasturba",
+            "age":12,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Shreya Patel",
+            "gender":"Female",
+            "pharmacy":"Sangivani",
+            "age":21,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Pooja Manvani",
+            "gender":"Female",
+            "pharmacy":"Vinay",
+            "age":28,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Jay mehta",
+            "gender":"Male",
+            "pharmacy":"Jagdish",
+            "age":23,
+            "date":"5 Jan 2022"
+        }
+    ]
+}
