@@ -11,6 +11,7 @@ export class CardDemoComponent implements OnInit {
 
   public toster = true;
   public filterData:string;
+  public demoData:any;
   public departmentData:cardDemoModel[] | null;
   constructor(private service:CardDemoService) { 
   }
@@ -18,6 +19,10 @@ export class CardDemoComponent implements OnInit {
   ngOnInit(): void {
     this.service.getData().subscribe(items => {
       this.departmentData = items
+    })
+
+    this.service.getDemo().subscribe(items => {
+      this.demoData = items
     })
 
     console.log(this.filterData);

@@ -8,11 +8,15 @@ import { cardDemoModel } from './cardDemo.model';
 })
 export class CardDemoService {
 
-  api:string = 'http://localhost:3000/database';
+  api:string = 'http://localhost:3000/';
 
   constructor(private http:HttpClient) { }
 
   public getData():Observable<cardDemoModel[]>{
-    return this.http.get<cardDemoModel[]>(`${this.api}`)
+    return this.http.get<cardDemoModel[]>(`${this.api}database`)
+  }
+
+  public getDemo():Observable<any[]>{
+    return this.http.get<any[]>(`${this.api}demo`)
   }
 }

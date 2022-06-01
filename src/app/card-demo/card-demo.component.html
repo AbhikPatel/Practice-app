@@ -1,4 +1,4 @@
-<div class="container overflow-auto py-5">
+<!-- <div class="container overflow-auto py-5">
     <select class="form-select w-25" style="cursor: pointer;" [(ngModel)]="filterData">
         <option value="above">Above 21</option>
         <option value="high">Age - High to Low</option>
@@ -33,4 +33,9 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div *ngFor="let data  of demoData">
+    <p> {{ data.name }} </p>
+    <p> {{ data.age }} </p>
 </div>
