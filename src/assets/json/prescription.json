@@ -1,5 +1,5 @@
 {
-    "prescription":[
+    "pharmacy":[
         {
             "name":"Abhishek Patel",
             "gender":"Male",
@@ -37,6 +37,50 @@
         },
         {
             "name":"Jay mehta",
+            "gender":"Male",
+            "pharmacy":"Jagdish",
+            "age":23,
+            "date":"5 Jan 2022"
+        }
+    ],
+    "patient":[
+        {
+            "name":"Ankit Patel",
+            "gender":"Male",
+            "pharmacy":"Jagdish",
+            "age":24,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Himani Barot",
+            "gender":"Female",
+            "pharmacy":"Sangivani",
+            "age":23,
+            "date":"25 May 2022"
+        },
+        {
+            "name":"Mrunal Sen",
+            "gender":"Male",
+            "pharmacy":"Kasturba",
+            "age":26,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Shreya Patel",
+            "gender":"Female",
+            "pharmacy":"Sangivani",
+            "age":21,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Pooja Manvani",
+            "gender":"Female",
+            "pharmacy":"Vinay",
+            "age":28,
+            "date":"12 April 2022"
+        },
+        {
+            "name":"Sagar Tandel",
             "gender":"Male",
             "pharmacy":"Jagdish",
             "age":23,

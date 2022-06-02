@@ -1,0 +1,10 @@
+.selected{
+    color: $primary;
+    border-bottom: 1px solid $primary;
+}
+
+.routing-title{
+    cursor: pointer;
+    color: gray;
+    transition: $transition;
+}
