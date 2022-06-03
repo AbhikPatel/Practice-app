@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prescription',
@@ -9,7 +10,7 @@ export class PrescriptionComponent implements OnInit {
 
   public routing:boolean = true;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -17,8 +18,10 @@ export class PrescriptionComponent implements OnInit {
   public onroute(){
     if(this.routing){
       this.routing = false
+      this.route.navigate(['/prescription/patient'])
     }else{
       this.routing = true
+      this.route.navigate(['/prescription/pharmacy'])
     }
   }
 

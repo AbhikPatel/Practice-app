@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'upload', loadChildren: () => import('./file-upload-demo/file-upload-demo.module').then(m => m.FileUploadDemoModule) },
   { path: 'filterDemo', loadChildren: () => import('./filter-demo/filter-demo.module').then(m => m.FilterDemoModule) },
   { path: 'prescription', loadChildren: () => import('./prescription/prescription.module').then(m => m.PrescriptionModule) },
+  { path: 'progess', loadChildren: () => import('./progress-bar/progress-bar.module').then(m => m.ProgressBarModule) },
 ];
 
 @NgModule({

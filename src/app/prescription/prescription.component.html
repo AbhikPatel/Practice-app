@@ -6,6 +6,9 @@
                 <span class="fw-bold fs-5 mb-3 border-3 mx-3 pb-2" (click)="onroute()" [ngClass]="routing === false ? 'selected' : 'routing-title'"> Patient </span>
             </div>
         </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
     <div class="col-6">
         
