@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class PrescriptionComponent implements OnInit {
 
   public routing:boolean = true;
-
   constructor(private route:Router) { }
 
   ngOnInit(): void {

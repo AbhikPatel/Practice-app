@@ -11,17 +11,16 @@ export class ProgressBarComponent implements OnInit {
   public status:number[];
   public currentPage:number = 1;
   constructor(private service:ProgressService) { 
-    this.status = [1,2]
+    this.status = [1]
   }
 
   ngOnInit(): void {
-    console.log(this.status.length);
-    
   }
-
+  
   ngOnChanges(){
     this.service.$getform1.subscribe((data) => {
-      this.currentPage = data
+      this.status.push(2)
+      console.log(this.status.length);
     })
   }
 
