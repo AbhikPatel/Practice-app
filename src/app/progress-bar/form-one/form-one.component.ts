@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProgressService } from '../progress.service';
 
 @Component({
@@ -9,8 +10,15 @@ import { ProgressService } from '../progress.service';
 })
 export class FormOneComponent implements OnInit {
 
-  constructor(private service:ProgressService) { 
-    
+  public oneGroup:FormGroup;
+  public para:boolean = true;
+  constructor(private service:ProgressService, private fb:FormBuilder) { 
+    this.oneGroup = this.fb.group(
+      {
+        first:['',Validators.required,Validators.minLength(5)],
+        last:['',Validators.required],
+      }
+    )
   }
 
   ngOnInit(): void {
@@ -18,6 +26,10 @@ export class FormOneComponent implements OnInit {
 
   public onNext(){
     this.service.$getform1.next(1);
+  }
+
+  public get getControls(){
+    return this.oneGroup['controls'];
   }
 
 }

@@ -7,6 +7,7 @@ import { FormOneComponent } from './form-one/form-one.component';
 import { FormTwoComponent } from './form-two/form-two.component';
 import { FormThreeComponent } from './form-three/form-three.component';
 import { FormFourComponent } from './form-four/form-four.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormFourComponent } from './form-four/form-four.component';
   ],
   imports: [
     CommonModule,
-    ProgressBarRoutingModule
+    ProgressBarRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProgressBarModule { }
