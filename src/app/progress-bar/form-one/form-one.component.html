@@ -2,16 +2,29 @@
     <form class="w-100" [formGroup]="oneGroup">
         <div class="mb-3">
             <label for="first" class="form-label">First Name</label>
-            <input type="email" class="form-control invalid" id="first" formControlName = 'first'>
-            <span class="text-danger" *ngIf="getControls['first']?.errors?.['required']"> This feild is required </span>
-            <span class="text-danger" *ngIf="getControls['first']?.errors?.['minlength']"> Min should be 5 </span>
+            <input type="text" class="form-control" id="first" formControlName='firstName'>
+            <div>
+                <span class="text-danger"
+                    *ngIf="getControls['firstName']?.errors?.['required'] && getControls['firstName'].touched"> This
+                    feild is required </span>
+                <span class="text-danger" *ngIf="getControls['firstName']?.errors?.['minlength']"> Min should be 5
+                </span>
+                <span class="text-danger" *ngIf="getControls['firstName']?.errors?.['maxlength']"> Max should be 15
+                </span>
+            </div>
         </div>
         <div class="mb-3">
             <label for="last" class="form-label">Last Name</label>
-            <input type="password" class="form-control" id="last" formControlName = 'last'>
+            <input type="text" class="form-control" id="last" formControlName='lastName'
+                [ngClass]="{ 'error' : getControls['lastName'].invalid}">
+            <span class="text-danger"
+                *ngIf="getControls['lastName']?.errors?.['required'] && getControls['lastName'].touched"> This feild is
+                required </span>
+            <span class="text-danger" *ngIf="getControls['lastName']?.errors?.['minlength']"> Min should be 5 </span>
+            <span class="text-danger" *ngIf="getControls['lastName']?.errors?.['maxlength']"> Max should be 15 </span>
         </div>
         <div class="d-flex justify-content-end">
-            <button class="btn btn-warning" routerLink="/progess/form2" (click)="onNext()"> Next </button>
+            <button class="btn btn-warning" routerLink="/progess/form2" [disabled]="!oneGroup.valid" (click)="onNext()"> Next </button>
         </div>
     </form>
 </div>

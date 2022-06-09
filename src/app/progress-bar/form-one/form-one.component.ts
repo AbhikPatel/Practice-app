@@ -10,25 +10,32 @@ import { ProgressService } from '../progress.service';
 })
 export class FormOneComponent implements OnInit {
 
-  public oneGroup:FormGroup;
-  public para:boolean = true;
-  constructor(private service:ProgressService, private fb:FormBuilder) { 
+  public oneGroup: FormGroup;
+  public para: boolean = true;
+  constructor(private service: ProgressService, private fb: FormBuilder) {
     this.oneGroup = this.fb.group(
       {
-        first:['',Validators.required,Validators.minLength(5)],
-        last:['',Validators.required],
+        firstName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
+        lastName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
       }
     )
+    this.service.formData.subscribe((data) => {
+      if (data) {
+        this.oneGroup.patchValue(data);
+        console.log(data);
+      }
+    })
   }
 
   ngOnInit(): void {
   }
 
-  public onNext(){
+  public onNext() {
     this.service.$getform1.next(2);
+    this.service.formData.next(this.oneGroup.value);
   }
 
-  public get getControls(){
+  public get getControls() {
     return this.oneGroup['controls'];
   }
 

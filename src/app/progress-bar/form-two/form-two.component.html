@@ -1,24 +1,31 @@
 <div class="d-flex flex-column">
-    <form class="row">
+    <form class="row" [formGroup]="secondGroup">
+        <div class="mb-3 col-6">
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="mail" formControlName = 'mail'>
+            <span class="text-danger" *ngIf="getControls['mail']?.errors?.['required'] && getControls['mail'].touched"> This field is required </span>
+            <span class="text-danger" *ngIf="getControls['mail']?.errors?.['maxlength'] && getControls['mail'].touched"> Max should be 20</span>
+        </div>
+        <div class="mb-3 col-6">
+            <label for="gender" class="form-label">Gender</label>
+            <div class="d-flex align-items-center mt-1">
+                <input type="radio" name="gender" id="male" value="Male" checked class="form-check-input">
+                <label for="male" class="form-check-label px-4 cursor"> Male </label>
+                <input type="radio" name="gender" id="female" value="Female" class="form-check-input">
+                <label for="female" class="form-check-label px-4 cursor"> Female </label>
+            </div>
+        </div>
         <div class="mb-3 col-6">
             <label for="age" class="form-label">Age</label>
-            <input type="number" class="form-control" id="age">
+            <input type="number" class="form-control" id="age" formControlName = 'age'>
+            <span class="text-danger" *ngIf="getControls['age']?.errors?.['required'] && getControls['age'].touched"> This field is required </span>
+            <span class="text-danger" *ngIf="getControls['age']?.errors?.['maxlength'] && getControls['age'].touched"> Max should be 3</span>
         </div>
         <div class="mb-3 col-6">
             <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone">
-        </div>
-        <div class="mb-3 col-6">
-            <label for="state" class="form-label">State</label>
-            <input type="text" class="form-control" id="state">
-        </div>
-        <div class="mb-3 col-6">
-            <label for="city" class="form-label">City</label>
-            <input type="text" class="form-control" id="city">
-        </div>
-        <div class="mb-3 col-12">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" id="address">
+            <input type="tel" class="form-control" id="phone" formControlName = 'mobile'>
+            <span class="text-danger" *ngIf="getControls['mobile']?.errors?.['required'] && getControls['mobile'].touched"> This field is required </span>
+            <span class="text-danger" *ngIf="getControls['mobile']?.errors?.['minlength'] && getControls['mobile'].touched"> Enter minimum 10 digits</span>
         </div>
     </form>
     <div class="d-flex justify-content-between">

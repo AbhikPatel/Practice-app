@@ -11,6 +11,10 @@
     background-color: $white;
 }
 
+input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+
 .progress-line{
     height: 5px;
     background-color: $primary;

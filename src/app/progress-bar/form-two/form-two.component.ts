@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProgressService } from '../progress.service';
 
 @Component({
@@ -9,7 +10,16 @@ import { ProgressService } from '../progress.service';
 })
 export class FormTwoComponent implements OnInit {
 
-  constructor(private service:ProgressService) { }
+  public secondGroup:FormGroup;
+  constructor(private service:ProgressService, private fb:FormBuilder) { 
+    this.secondGroup = this.fb.group(
+      {
+        mail:['',[Validators.required, Validators.email,Validators.maxLength(20)]],
+        age:['',[Validators.required,Validators.maxLength(3)]],
+        mobile:['',[Validators.required,Validators.minLength(10)]],
+      }
+    )
+  }
 
   ngOnInit(): void {
   }
@@ -22,4 +32,7 @@ export class FormTwoComponent implements OnInit {
     this.service.$getform1.next(3);
   }
 
+  public get getControls(){
+    return this.secondGroup['controls'];
+  }
 }
