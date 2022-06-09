@@ -5,6 +5,8 @@ import { PrescriptionRoutingModule } from './prescription-routing.module';
 import { PrescriptionComponent } from './prescription.component';
 import { PharmacyListComponent } from './pharmacy-list/pharmacy-list.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PrescriptionService } from './prescription.service';
 
 
 @NgModule({
@@ -15,7 +17,11 @@ import { PatientListComponent } from './patient-list/patient-list.component';
   ],
   imports: [
     CommonModule,
-    PrescriptionRoutingModule
+    PrescriptionRoutingModule,
+    HttpClientModule
+  ],
+  providers:[
+    PrescriptionService
   ]
 })
 export class PrescriptionModule { }

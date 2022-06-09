@@ -1,12 +1,14 @@
 <div class="d-flex">
-    <form class="w-100">
+    <form class="w-100" [formGroup]="oneGroup">
         <div class="mb-3">
             <label for="first" class="form-label">First Name</label>
-            <input type="email" class="form-control" id="first">
+            <input type="email" class="form-control invalid" id="first" formControlName = 'first'>
+            <span class="text-danger" *ngIf="getControls['first']?.errors?.['required']"> This feild is required </span>
+            <span class="text-danger" *ngIf="getControls['first']?.errors?.['minlength']"> Min should be 5 </span>
         </div>
         <div class="mb-3">
             <label for="last" class="form-label">Last Name</label>
-            <input type="password" class="form-control" id="last">
+            <input type="password" class="form-control" id="last" formControlName = 'last'>
         </div>
         <div class="d-flex justify-content-end">
             <button class="btn btn-warning" routerLink="/progess/form2" (click)="onNext()"> Next </button>
