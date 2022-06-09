@@ -17,7 +17,7 @@ export class FormOneComponent implements OnInit {
   }
 
   public onNext(){
-    this.service.$getform1.next(1);
+    this.service.$getform1.next(2);
   }
 
 }

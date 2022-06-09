@@ -10,3 +10,27 @@
 .inactive{
     background-color: $white;
 }
+
+.progress-line{
+    height: 5px;
+    background-color: $primary;
+    z-index: 1;
+    top: 19px;
+    transition: 0.4s all;
+}
+
+.first{
+    width: 0px;
+}
+
+.second{
+    width: 35%;
+}
+
+.third{
+    width: 65%;
+}
+
+.fourth{
+    width: 98%;
+}
