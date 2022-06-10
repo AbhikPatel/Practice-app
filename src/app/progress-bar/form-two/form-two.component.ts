@@ -22,6 +22,11 @@ export class FormTwoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.service.formData.subscribe((data) => {
+      if(data){
+        this.secondGroup.patchValue(data);
+      }
+    })
   }
 
   public onPrevious(){
@@ -30,6 +35,7 @@ export class FormTwoComponent implements OnInit {
 
   public onNext(){
     this.service.$getform1.next(3);
+    this.service.formData.next(this.secondGroup.value);
   }
 
   public get getControls(){

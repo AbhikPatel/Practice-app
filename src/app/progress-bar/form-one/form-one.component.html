@@ -24,7 +24,7 @@
             <span class="text-danger" *ngIf="getControls['lastName']?.errors?.['maxlength']"> Max should be 15 </span>
         </div>
         <div class="d-flex justify-content-end">
-            <button class="btn btn-warning" routerLink="/progess/form2" [disabled]="!oneGroup.valid" (click)="onNext()"> Next </button>
+            <button class="btn btn-warning" routerLink="/progess/form2" (click)="onNext()"> Next </button>
         </div>
     </form>
 </div>

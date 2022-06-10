@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProgressService } from '../progress.service';
 
@@ -12,6 +12,7 @@ export class FormOneComponent implements OnInit {
 
   public oneGroup: FormGroup;
   public para: boolean = true;
+  public editData:any = '';
   constructor(private service: ProgressService, private fb: FormBuilder) {
     this.oneGroup = this.fb.group(
       {
@@ -19,15 +20,14 @@ export class FormOneComponent implements OnInit {
         lastName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
       }
     )
+  }
+  
+  ngOnInit(): void {
     this.service.formData.subscribe((data) => {
       if (data) {
-        this.oneGroup.patchValue(data);
-        console.log(data);
+        this.oneGroup.patchValue(data)
       }
     })
-  }
-
-  ngOnInit(): void {
   }
 
   public onNext() {

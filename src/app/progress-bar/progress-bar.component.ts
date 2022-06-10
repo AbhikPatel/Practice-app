@@ -16,7 +16,7 @@ export class ProgressBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngDoCheck(){
+  ngAfterContentInit(){
     this.service.$getform1.subscribe((data) => {
       this.status.push(data)
     })
@@ -29,21 +29,5 @@ export class ProgressBarComponent implements OnInit {
     
     this.status = [...new Set(this.status)]
     console.log(this.status);
-  }
-
-  public onFirst(){
-    this.status = [1]
-  }
-
-  public onSecond(){
-    this.status = [1,2];
-  }
-
-  public onThird(){
-    this.status = [1,2,3];
-  }
-
-  public onFourth(){
-    this.status = [1,2,3,4];
   }
 }
